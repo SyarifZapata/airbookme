@@ -12,14 +12,9 @@ import {
 } from "@chakra-ui/react"
 import { Logo } from "./Logo"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
+import { Sdk } from "./adapters/SharetribeSdk"
 
-const sharetribeSdk = require('sharetribe-flex-sdk');
-
-const sdk = sharetribeSdk.createInstance({
-  clientId: process.env.REACT_APP_SHARETRIBE_CLIENT_ID
-});
-
-sdk.marketplace.show().then((res: any)=>{
+Sdk.marketplace.show().then((res: any)=>{
   console.log(res);
   console.log("hallo");
 });
